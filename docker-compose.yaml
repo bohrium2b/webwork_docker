@@ -1,15 +1,13 @@
 version: '3'
 services:
   webwork:
-    build:
-      context: .
-      dockerfile: Dockerfile
     volumes:
       - webwork:/opt/webwork/
     ports:
       - 8012:8080
     depends_on:
       - db
+    image: bohrium2b/webwork
   db:
     image: mariadb
     environment:
